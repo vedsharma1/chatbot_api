@@ -1,0 +1,10 @@
+streamlit
+requests
+fastapi
+uvicorn
+anthropic
+pydantic
+fastapi
+uvicorn
+anthropic
+python-dotenv
