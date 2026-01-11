@@ -1,7 +1,10 @@
 import streamlit as st
 from anthropic import Anthropic
+import os
 
-client = Anthropic(api_key="")
+client = Anthropic(
+    api_key=os.getenv("ANTHROPIC_API_KEY")
+)
 
 st.title("Simple Chatbot 😊")
 
@@ -15,5 +18,6 @@ if st.button("Send") and user_input:
         ],
         max_tokens=300
     )
+
 
     st.write("Bot:", response.content[0].text)
