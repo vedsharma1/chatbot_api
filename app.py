@@ -1,6 +1,10 @@
 import streamlit as st
 from anthropic import Anthropic
 import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 client = Anthropic(
     api_key=os.getenv("ANTHROPIC_API_KEY")
@@ -21,3 +25,4 @@ if st.button("Send") and user_input:
 
 
     st.write("Bot:", response.content[0].text)
+
